@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  app:
+    build: 
+      dockerfile: app_docker/Dockerfile
+      context: ../
+    image: template_react_login_calendar_api:v1
+    container_name: template_react_login_calendar_api
+    env_file: ./../app/.env
+    volumes:
+      # - ./nginx.conf:/etc/nginx/nginx.conf
+      - volume_template_react_login_calendar_api:/app
+    ports:
+      - 80:80
+    networks:
+      - network_template_react_login_calendar_api
+
+volumes:
+  volume_template_react_login_calendar_api:
+    name: volume_template_react_login_calendar_api
+    external: false
+
+networks:
+  network_template_react_login_calendar_api:
+    name: network_template_react_login_calendar_api
+    external: true

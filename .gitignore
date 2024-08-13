@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+
+# Firebase
+# firebase.json
+# .firebaserc
+# .firebase/
